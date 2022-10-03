@@ -91,8 +91,10 @@ def total(x,order):
     for i in range(len(menu)):
             for j in range(len(menu[i]["options"])):
                 if menu[i]["numbers_of_order"][j]!=0:
-                    x+=f'{menu[i]["numbers_of_order"][j]} of {menu[i]["options"][j]}, ' 
-                
+                    if menu[i]["numbers_of_order"][j]==1:
+                        x+=f'{menu[i]["numbers_of_order"][j]} order of {menu[i]["options"][j]}, ' 
+                    else: 
+                        x+=f'{menu[i]["numbers_of_order"][j]} orders of {menu[i]["options"][j]}, ' 
     if x!="" and order!="quit":
         return (f'=> {x}')
     elif x!="" and order=="quit":
